@@ -20,12 +20,18 @@ public class CategoryDAO {
 
 	// méthode pour supprimer une catégorie de la bd
 	public static void deleteCategory(Category obj) {
-		// code pour la suppression de l'obj Category
+		Main.categories.remove(obj);
 	}
 
 	// méthode pour mettre à jour une catégorie de la bd
 	public static void updateCategory(int idCat, Category newObj) {
-		// code de mise à jour d'une catégorie avec idCat
+		for(Category obj : Main.categories)
+		{
+			if(obj.getId()==idCat)
+			{
+				Main.categories.set(Main.categories.indexOf(obj), newObj);
+			}
+		}
 	}
 
 }

@@ -22,7 +22,20 @@ public class Main {
 		
 		CategoryDAO.addCategory(c1);
 		CategoryDAO.addCategory(c2);
+		System.out.println(CategoryDAO.listCategories());
 		
+		// Après suppression
+		//CategoryDAO.deleteCategory(c1);
+		//System.out.println(CategoryDAO.listCategories());
+		
+		//Mise à jour
+		
+		Category newCat = new Category();
+		newCat.setTitre("Géographie");
+		newCat.setNbLivres(3);
+		newCat.setId(2);
+		
+		CategoryDAO.updateCategory(2, newCat);
 		System.out.println(CategoryDAO.listCategories());
 
 	}
