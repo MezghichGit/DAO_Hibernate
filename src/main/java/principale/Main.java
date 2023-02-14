@@ -1,18 +1,23 @@
 package principale;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import dao.CategoryDAO;
+import dao.BookDAO;
 import entities.Category;
-
+import entities.Book;
 public class Main {
 	
 	public static List<Category> categories = new ArrayList<Category>(); // notre source de données.
 
+	public static List<Book> books = new ArrayList<Book>();
+	
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to our Library");
-		
+		/*
 		
 		//System.out.println(categories);
 		
@@ -37,7 +42,15 @@ public class Main {
 		
 		CategoryDAO.updateCategory(2, newCat);
 		System.out.println(CategoryDAO.listCategories());
-
+		*/
+		
+		
+		Book b1 = new Book(1,"Java OCA",150,LocalDate.of(2022,10,10),1);
+		Book b2 = new Book(2,"Java OCP",250,LocalDate.of(2022,10,10),1);
+		BookDAO.addBook(b1);
+		BookDAO.addBook(b2);
+		
+		System.out.println(BookDAO.listBooks());
 	}
 
 }
